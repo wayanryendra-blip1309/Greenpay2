@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenPay Lite - Bank Sampah Digital</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/app.js" defer></script>
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="/">
+            <span class="brand-icon">♻</span>
+            <span>GreenPay<span class="lite"> Lite</span></span>
+        </a>
+        <span class="status"><span class="dot"></span> Sistem aktif</span>
+    </header>
+
+    <main class="container">
+        <section class="welcome">
+            <div>
+                <p class="eyebrow">GREEN LIFESTYLE • DIGITAL WALLET</p>
+                <h1>Sampahmu bernilai.<br>Lingkungan pun berseri.</h1>
+                <p class="welcome-text">
+                    Setorkan sampah, kumpulkan saldo, dan mulai
+                    langkah kecil untuk bumi yang lebih bersih.
+                </p>
+            </div>
+            <div class="eco-art" aria-hidden="true">🌱</div>
+        </section>
+
+        <section class="stats">
+            <article class="stat-card balance-card">
+                <p>Saldo GreenPay</p>
+                <h2 id="balance">Rp0</h2>
+                <span>Saldo simulasi dari setoran sampah</span>
+            </article>
+            <article class="stat-card">
+                <p>Total setoran</p>
+                <h2 id="totalDeposits">0</h2>
+                <span>Transaksi tercatat</span>
+            </article>
+            <article class="stat-card">
+                <p>Total berat</p>
+                <h2 id="totalWeight">0 kg</h2>
+                <span>Sampah yang dikumpulkan</span>
+            </article>
+        </section>
+
+        <section class="content-grid">
+            <article class="panel">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">TRANSAKSI BARU</p>
+                        <h2>Setor sampah</h2>
+                    </div>
+                    <span class="heading-icon">♻</span>
+                </div>
+
+                <form id="depositForm">
+                    <label for="wasteType">Jenis sampah</label>
+                    <select id="wasteType" required>
+                        <option value="plastik">Botol plastik — Rp500/kg</option>
+                        <option value="aluminium">Kaleng aluminium — Rp1.000/kg</option>
+                        <option value="kaca">Botol kaca — Rp300/kg</option>
+                    </select>
+
+                    <label for="weight">Berat sampah (kg)</label>
+                    <input
+                        id="weight"
+                        type="number"
+                        min="0.01"
+                        max="100"
+                        step="0.01"
+                        placeholder="Contoh: 2.5"
+                        required
+                    >
+
+                    <div class="estimate">
+                        <span>Estimasi saldo</span>
+                        <strong id="estimate">Rp1.250</strong>
+                    </div>
+
+                    <button id="submitButton" type="submit">
+                        + Catat Setoran
+                    </button>
+                    <p id="notice" class="notice" role="status"></p>
+                </form>
+            </article>
+
+            <article class="panel">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">DAFTAR HARGA</p>
+                        <h2>Harga sampah</h2>
+                    </div>
+                </div>
+
+                <div class="tariff-row">
+                    <span class="waste-icon">🧴</span>
+                    <div class="tariff-info">
+                        <strong>Botol plastik</strong>
+                        <span>Plastik PET</span>
+                    </div>
+                    <strong>Rp500/kg</strong>
+                </div>
+
+                <div class="tariff-row">
+                    <span class="waste-icon">🥫</span>
+                    <div class="tariff-info">
+                        <strong>Kaleng aluminium</strong>
+                        <span>Kaleng bekas</span>
+                    </div>
+                    <strong>Rp1.000/kg</strong>
+                </div>
+
+                <div class="tariff-row">
+                    <span class="waste-icon">🍾</span>
+                    <div class="tariff-info">
+                        <strong>Botol kaca</strong>
+                        <span>Kaca bekas</span>
+                    </div>
+                    <strong>Rp300/kg</strong>
+                </div>
+
+                <div class="info-note">
+                    Harga adalah contoh untuk simulasi tugas kuliah,
+                    bukan harga pasar resmi.
+                </div>
+            </article>
+        </section>
+
+        <section class="panel history-panel">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">AKTIVITAS TERBARU</p>
+                    <h2>Riwayat setoran</h2>
+                </div>
+                <button id="refreshButton" class="secondary-button" type="button">
+                    ↻ Perbarui
+                </button>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Transaksi</th>
+                            <th>Jenis sampah</th>
+                            <th>Berat</th>
+                            <th>Tanggal</th>
+                            <th>Saldo masuk</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyBody">
+                        <tr>
+                            <td colspan="5" class="empty">
+                                Memuat riwayat...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="api-note">
+            <div>
+                <strong>GreenPay API</strong>
+                <p>API lokal aktif untuk simulasi dan pengujian.</p>
+            </div>
+            <a href="/api/health" target="_blank" rel="noreferrer">
+                Cek status API ↗
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        GreenPay Lite · Proyek simulasi bank sampah digital
+    </footer>
+</body>
+</html>

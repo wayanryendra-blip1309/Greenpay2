@@ -1,0 +1,18 @@
+{
+  "balance": 5010,
+  "deposits": [
+    {
+      "id": "7BC13DEA",
+      "request_id": "943a560f-d22b-48c7-b290-451d59bffb65",
+      "type": "aluminium",
+      "name": "Kaleng Aluminium",
+      "weight": 5.01,
+      "price_per_kg": 1000,
+      "amount": 5010,
+      "date": "2026-10-29T15:54:10+07:00"
+    }
+  ],
+  "processed_keys": [
+    "943a560f-d22b-48c7-b290-451d59bffb65"
+  ]
+}
